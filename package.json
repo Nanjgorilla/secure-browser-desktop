@@ -1,0 +1,68 @@
+{
+  "name": "secure-browser",
+  "version": "1.0.0",
+  "description": "広告ブロック・高セキュリティのデスクトップブラウザ",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:engine": "node scripts/build-engine.js",
+    "dist": "npm run build:engine && electron-builder --win --linux"
+  },
+  "keywords": [],
+  "author": "SecureBrowser",
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "electron": "^38.8.6",
+    "electron-builder": "^25.1.8"
+  },
+  "dependencies": {
+    "@ghostery/adblocker-electron": "^2.20.1",
+    "cross-fetch": "^4.1.0",
+    "tldts": "^7.4.19"
+  },
+  "productName": "SecureBrowser",
+  "build": {
+    "appId": "jp.local.securebrowser",
+    "productName": "SecureBrowser",
+    "files": [
+      "src/**",
+      "assets/engine.bin",
+      "package.json"
+    ],
+    "asar": true,
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "language": "1041",
+      "installerLanguages": [
+        "ja_JP"
+      ],
+      "artifactName": "SecureBrowser-Setup-${version}.exe"
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "category": "Network",
+      "artifactName": "SecureBrowser-${version}.AppImage"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "category": "public.app-category.productivity"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+*{box-sizing:border-box}body{margin:0;font:13px "Yu Gothic UI","Meiryo","Noto Sans CJK JP",sans-serif;background:#1e1f24;color:#e8e8ea;user-select:none;overflow:hidden}
+#tabbar{display:flex;height:38px;padding:4px 4px 0;background:#15161a}#tabs{display:flex;overflow:hidden;flex:1}
+.tab{display:flex;align-items:center;max-width:220px;min-width:80px;flex:1;padding:0 8px;margin-right:2px;border-radius:8px 8px 0 0;background:#25262c;cursor:default}
+.tab.active{background:#2f3138}.tab span{flex:1;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.tab button{padding:0 4px}
+button{background:none;border:0;color:inherit;font-size:15px;padding:4px 8px;border-radius:6px;cursor:pointer}button:hover{background:#3a3c44}button:disabled{opacity:.35}
+#toolbar{display:flex;align-items:center;gap:2px;height:46px;padding:0 6px;background:#2f3138}
+#f{flex:1;display:flex;align-items:center;background:#1e1f24;border-radius:16px;padding:0 10px;margin:0 6px}
+#addr{flex:1;background:none;border:0;color:#fff;font-size:14px;padding:7px 4px;outline:none;user-select:text}
+#lock.insecure{filter:grayscale(1)}#shield{padding:0 8px;color:#7fd38a}
+#toast{position:fixed;right:10px;top:90px;background:#444;padding:8px 12px;border-radius:6px;display:none;z-index:9}
